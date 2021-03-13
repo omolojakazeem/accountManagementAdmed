@@ -1,4 +1,6 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.forms import forms, ModelForm
+
 from .models import UserModel
 
 
@@ -25,3 +27,9 @@ class MyUserCreationForm(UserCreationForm):
         if commit:
             my_user.save()
         return my_user
+
+
+class MyUserLogin(AuthenticationForm):
+    class Meta:
+        model = UserModel
+        fields = ('username', 'password1')

@@ -5,7 +5,8 @@
     <title>User Profile</title>
 </head>
 <body>
-<h1>Welcome {{user.last_name}}</h1>
+<h1>Welcome {{user.username}}, you can ,<a href="{% url 'logout' %}"> logout here.</a></h1>
+
 
 <table border="2">
     <tr>
